@@ -1,3 +1,4 @@
 *.pdf
 latex/Output
 *.gz
+latex/thesis.sublime-workspace
