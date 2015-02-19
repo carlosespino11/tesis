@@ -1,0 +1,44 @@
+%%% fokker.tex
+
+\chapter{Prueba $\chi^2$ de Pearson}
+\label{apchitest}
+
+La prueba $\chi^2$ de Pearsones una prueba estadística aplicada a datos categóricos para evaluar qué tan probable es que la diferencia conteos entre categorías es dada de manera aleatoria o no.
+
+Consideremos $r$ categorias, podemos construir una tabla insertando en cada fila $i$ celdas para el conteo esperado $O_{i}$ y el conteo esperado $E_i$ de la categoría $i$. Dicha tabla recibe el nombre de \textit{tabla de contingencia}.
+
+Sea $H_0$ la hipótesis de que las frecuencias observadas por categoría provienen de un proceso aleatorio, es decir,
+\begin{equation}
+ H_0: E_{i}=O_i, 
+\end{equation}
+el valor del estadístico de prueba es
+\begin{equation}
+\chi^2 = \sum_{i=1}^n \dfrac{\left( O_i-E_i \right)^2}{E_i}.
+\end{equation}
+
+Dicha prueba fue propuesta por \citet{pearson90}. Dicho estatístico alcanza su valor más bajo cuando $O_i=E_i$. Para un tamaño de muestra fijo, valores altos en $O_i-E_i$ producen $\chi^2$ grandes y por lo tanto, mayor evidencia contra $H_0$. Cuando $n\rightarrow \infty$, el estadístico $\chi^2 \sim \chi^2_{(r-1)(c-1)}$.
+No se rechaza $H_0$ cuando $\chi^2 < \chi^2_{(1-\alpha)} {(r-1)(c-1)}$  donde $\alpha$ es la significancia estadística, $c$ el número de columnas  y $r$ el número de filas de la tabla de contingencia.
+% etc
+
+% example figure:
+
+% \begin{figure}[t]
+% \centerline{\epsfig{figure=fig1.eps,width=5in}}
+% \caption[Probability density on the surface $\Omega(E,t)$]{
+% Projecting a probability density on the surface $\Omega(E,t)$
+% down to $\rho(E,t)$ in the $E-t$ plane,
+% or across to $\eta(\Omega,t)$ in the $\Omega-t$ plane.
+% The gradient $g$ is also shown.
+% }
+% \label{fig:fokker}
+% \end{figure}
+
+
+% We assume a one-to-one time-dependent mapping $\Omega = \Omega(E,t)$,
+% which can be represented as a (fixed) surface in
+% three-dimensional $(E,t,\Omega)$ space (Fig. \ref{fig:fokker}).
+%  $\cdots$
+
+
+
+ %%%

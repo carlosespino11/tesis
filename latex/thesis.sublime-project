@@ -1,0 +1,13 @@
+{
+  "options":{
+    "root": "thesis.tex",
+    "pdf": "Tesis.pdf"
+  },
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "."
+		}
+	]
+}

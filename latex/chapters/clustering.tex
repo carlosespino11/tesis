@@ -1,0 +1,263 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%                                                                 %
+%                            Clustering                           %
+%                                                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+
+%\headline{\hrulefill}
+%\headrulewidth 
+
+\chapter{Análisis de Conglomerados}
+
+Este análisis divide los objetos (individuos) de un conjunto de datos, en grupos (conglomerados o \textit{clusters}) que sean significativos y/o útiles.
+Si el objetivo es obtener grupos significativos,  los conglomerados deben capturar la estructura natural de los datos. Sin embargo, en algunos casos el análisis de conglomerados es un punto de partida útil para otros propósitos, como hacer un resumen de los datos. Ya sea por comprensión o por utilidad, este análisis ha jugado un papel importante en una amplia variedad de campos: aprendizaje de máquina, minería de datos, estadística, ciencias sociales y naturales, y reconocimiento de patrones.
+
+\section{¿Qué es el análisis de conglomerados?}
+El análisis de conglomerados es una técnica de estadística multivariada que consiste en agrupar objetos, tomando como base solamente la información que encontramos en los datos que describen al objeto y a sus relaciones. El objetivo es formar grupos (conglomerados) cuyos elementos tengan características similares entre sí, pero que estén poco relacionados con los objetos de otros grupos.  
+
+Un objeto puede ser descrito por un conjunto de mediciones, o por su relación con otros objetos. La meta también puede ser organizar los grupos en una jerarquía natural. Esto involucra agrupar sucesivamente de tal manera que a cierto nivel de jerarquía, los conglomerados que estén en el mismo grupo sean más similares entre sí que entre conglomerados de otros grupos.
+
+El análisis de \textit{clusters} también es utilizado para formar estadísticas descriptivas para verificar si los datos consisten o no en un conjunto de grupos, donde cada grupo representa objetos con características diferentes a los objetos en otros grupos.
+
+Un factor común de los objetivos del análisis de conglomerados es la noción de grado de similitud entre dos objetos agrupados. Cualquier algoritmo utilizado para hacer conglomerados busca agrupar objetos basándose en su grado de similaridad.
+
+
+\textbf{Notación:}
+\begin{itemize}
+\item $X \in \Re^{n \times p}$ denota el conjunto de observaciones con n individuos y p variables. $x_{ij}$ es la medición del atributo $j$ para el individuo $i$ para $i=1,2,...,N$ y $j=1,2,...,p$.
+\item Denotamos al individuo $j$ como $x_{j}$ , donde $x_{j} = (x_{j1},x_{j2},...,x_{jp})^T \in \Re^p$ para $j=1,2,\dots,n$. Así $X=(x_{1},x_{2},...,x_{n})$.
+\item $C_{k}$ denota el $k$-ésimo grupo.
+\item $K$ denota el número total grupos.
+\end{itemize}
+
+
+\section{Enfoques}
+El modo más común para distinguir entre diferentes tipos de conglomerados es si el conjunto de grupos está anidado o no anidado, en términos tradicionales, si es jerárquico o particional.
+
+\subsection{Particional}
+Es simplemente una división del conjunto de datos en subconjuntos mutuamente excluyentes de tal forma que cada objeto esté en sólo un subconjunto.
+
+Se busca hacer una partición de $X$ en $K$ grupos, $C = \{C_{1},C_{2},...,C_{K}\}$ tal que:
+	\begin{itemize}
+	\item $C_{i} \neq \emptyset,i=1,2,...,K $
+	\item $\displaystyle \bigcup_{i=1}^{K} C_{i} = X $
+	\item $C_{i} \cap C_{j} = \emptyset $ con $, i,j=1,2,...,K $, $i \neq j$ 
+	\end{itemize}
+
+
+\subsection{Jerárquico}
+Si los grupos tienen subgrupos, entonces obtenemos un conglomerado jerárquico, que es un conjunto de conglomerados anidados, $H = \{H_{1},H_{2},...,H_{Q}\}$ $(Q \leq n )$ tal que si $C_{i} \in H_{m},C_{j} \in H_{l}$ con $m>l$ entonces, $C_{i} \subset C_{j}$ o $C_{i} \cap C_{j} = \emptyset$ para todo $i \neq j$ y $m,l=1,2,...,Q$ organizados como árbol. 
+
+Cada nodo (grupo) en el árbol (excepto por los nodos de las hojas) es la unión de sus hijos (subgrupos) y la raíz del árbol es el grupo que contiene a todos los objetos. 
+
+Hay dos enfoques para construir una jerarquía de grupos:
+\begin{itemize}
+  \item Agrupamiento aglomerativo : construye una jerarquía partiendo de grupos pequeños que sucesivamente se van juntando en nodos padre. 
+  \item Agrupamiento divisivo : construye una jerarquía de arriba para abajo dividiendo grandes grupos en pequeños, empezando por un grupo que contiene todos los datos.
+\end{itemize}
+
+Un conglomerado jerárquico puede ser visto como una secuencia de conglomerados particionales y un conglomerado particional puede ser obtenido tomando cualquier miembro de esa secuencia, es decir, cortando el árbol jerárquico en un nivel en particular.
+
+
+\section{Matrices de proximidad}
+Muchas veces los datos son representados en términos de la proximidad entre pares de objetos. Esto puede ser ya sea por sus similitudes o disimilitudes. Así, los datos pueden ser representados en una matriz $D$ de $n \times n$ , donde $n$ es el número de individuos y cada entrada $d_{ij}$ representa la proximidad entre el individuo $i$ y el $j$. La matriz se introduce en los algoritmos de conglomerados.
+
+La mayoría de los algoritmos utilizan una matriz de disimilitudes con entradas no negativas y elementos en la diagonal $d_{ii} =0 $, $i=1,2,...,n$ .
+
+
+\section{Medidas de disimilitud basada en atributos}
+Los algoritmos de conglomerados más comunes utilizan como entrada la matriz de disimilitud, así que es necesario construir primero la disimilitud entre pares de observaciones. En el caso más común, definimos una disimilitud $d_j(x_{ij},x_{i'j})$ entre valores del $j$-ésimo atributo, y después definimos
+
+\begin{equation}
+D(x_{i},x_{i'})= \sum_{j=1}^{p} d_{j}(x_{ij},x_{i'j})
+\end{equation}
+
+como la disimilitud entre los objetos $i$ y $i'$ \citep{hastie09}. La elección más común es la distancia cuadrática. Sin embargo, hay más elecciones posibles que pueden conducir a resultados muy diferentes. Para atributos no cuantitativos, la distancia cuadrática podría ser poco apropiada. Además, a veces es deseable ponderar los atributos de manera individual 
+
+\section{K-medias}
+El algoritmo de K-medias es uno de los métodos iterativos de conglomerados de descenso más populares. Se utiliza para variables de tipo cuantitativo y la medida de similitud entre dos objetos utilizada es la distancia Euclideana al cuadrado:
+
+\begin{equation}
+d(x_{i},x_{i'})= \sum_{j=1}^p (x_{ij}-x_{i'j})^2 = \| x_{i}-x_{i'} \|^2.
+\end{equation}
+
+
+
+El objetivo es minimizar :
+
+
+\begin{equation}\label{eq:kmedias}
+E = \sum_{i=1}^{n} \| x_{i} - m_{k(x_{i})} \| ^2,
+\end{equation}
+
+
+
+donde $m_{i}$ es el centroide que corresponde al grupo $i$ para $i=1, 2, \dots, k$  y $k(x_{i})=\underset{k}{\textrm{argmin}} \| x_{i}-m_{k} \| $ es el índice del centroide más cercano a $x_{i}$.
+
+El algoritmo de descenso iterativo está dado por:
+
+%\begin{singlespace}
+\ssp
+\begin{algorithm}
+  \SetAlgoNoLine
+  \DontPrintSemicolon
+  \KwIn{Conjunto de $n$ individuos $X=(x_{1},x_{2},...,x_{n})$ en $\Re^p$ y el número de grupos $K$ .}
+  \KwOut{Una partición de los datos indexado por $Y=(y_{1},y_{2},...,y_{n})$ con $y_{i} \in \{1,2,...,K\} $ para $i = 1,2,...,n$.}
+
+  Inicialización: inicializar los centroides de los grupos  $\{m_{1},m_{2},...,m_{K}\}$
+  
+  Asignación : para cada objeto $x_{i}$, se toma \\ $y_{i}=\underset{k}{\textrm{argmin}} \| x_{i}-m_{k} \| $ con $i = 1,2,...,n$
+ 
+  Estimación de centroides: para cada grupo $k$, sea $C_{k}=\{x_{n} | y_{n}=k\}$, el centroide es estimado como $m_{k}=\frac{1}{n} \sum_{x \in C_{k}} x_{i} $
+  
+  Parar si $Y$ no cambia, en otro caso, regresar a paso 2.
+
+  \caption{Algoritmo de K-medias\label{Kmedias}}
+\end{algorithm}
+\dsp
+%\end{singlespace}
+Cada uno de los pasos 1 y 2 reducen el valor de la ecuación \ref{eq:kmedias}, asegurando convergencia. Sin embargo, el resultado puede corresponder a un mínimo local. Una forma de solucionar esto es empezar el algoritmo con distintas opciones aleatorias y escoger la solución cuyo valor de la función objetivo sea menor.
+
+EL algoritmo de $K$-medias está relacionado con el algoritmo EM para estimar ciero modelo de mezclas Gaussianas \citep{hastie09}. 
+% Una descripción más exacta se da en la próxima sección
+ 
+% \subsubsection{K-medias cómo mezcla de normales}
+%  \# FALTA \#
+
+\subsection{K-medias esféricas}
+Cuando se cuenta con datos de dimensiones altas como documentos de texto  y canastas de mercado, se ha mostrado que la similitud de cosenos es una métrica superior a la distancia Euclideana. Esta implicación se sigue de que la dirección del vector de un documento, es más importante que su magnitud. La medida de distancia utilizada, que se busca minimizar,  es la de disimilitud de cosenos:
+
+\begin{eqnarray}\label{obj:kmediasesforig}
+  d(x_{i},x_{i'})& = &1- \cos(x_{i},x_{i'}) \\ \nonumber
+  &=& 1-\frac{\langle x_{i},x_{i'}\rangle}{\|x_{i}\|\|x_{i'}\|} \\ \nonumber
+  &=& 1-\frac{x_{i}^Tx_{i'}}{\|x_{i}\|\|x_{i'}\|}
+\end{eqnarray}
+
+Pero minimizar $1- \cos(x_{i},x_{i'})$ es equivalente a maximizar $\cos(x_{i},x_{i'})$. Ahora bien, si se normaliza a cada $x_{i}$ de tal forma que $\|x_{i}\|=1$ para $i = 1,2,...,n$ de tal forma que las observaciones pertenezcan a la hiperesfera de dimensión $p$ y radio 1, $\mathcal{S}^p =\lbrace x \in \Re^{p} : x^T x=1 \rbrace $ entonces la ecuación \ref{obj:kmediasesforig} se convierte en $d(x_{i},x_{i'}) = 1- x_{i}^Tx_{i'}$. Sean ${\mu_{1},\mu_{2},...,\mu_{K}}$ un conjunto de centroides unitarios, el algoritmo de k-medias esféricas (i.e. k-medias en una hiperesfera unitaria) busca maximizar la similitud de cosenos promedio 
+\begin{equation}\label{eq:kmediasesf}
+L = \sum_{i=1}^{n} x_{i}^T \mu_{k(x_{i})} 
+\end{equation}
+
+donde $k(x_{i})=\underset{k}{\textrm{argmax}} x_{i}^T \mu_{k}  $ es el índice del centroide cuyo ángulo tiene mayor similitud al ángulo de $x_{i}$.
+
+% \begin{singlespace}
+\ssp
+\begin{algorithm}
+  \SetAlgoNoLine
+  \DontPrintSemicolon
+  \KwIn{Conjunto de $n$ vectores de individuos unitarios $X=(x_{1},x_{2},...,x_{n})$ en $\Re^p$ y el número de grupos $K$.}
+  \KwOut{Una partición de los datos indexado por $Y=(y_{1},y_{2},...,y_{n})$ con $y_{i} \in \{1,2,...,K\} $ para $i = 1,2,...,n$.}
+  Inicialización: inicializar los centroides unitarios de los grupos  $\{\mu_{1},\mu_{2},...,\mu_{K}\}$
+
+  Asignación : para cada objeto $x_{i}$, se toma \\ $y_{i}=\underset{k}{\textrm{argmax}}  x_{i}^T \mu_{k}  $ con $i = 1,2,...,n$
+ 
+  Estimación de centroides: para cada grupo $k$, sea $C_{k}=\{x_{n} | y_{n}=k\}$, el centroide es estimado como $\mu_{k}= \sum_{x \in C_{k}} \frac{x_{i}}{\| \sum_{x \in C_{k}} x_{i}\|}$
+  
+  Parar si $Y$ no cambia, en otro caso, regresar a paso 2.
+  \caption{Algoritmo K-medias esféricas\label{Kmediasesf}}
+\end{algorithm}
+\dsp
+% \end{singlespace}
+
+\textbf{Observación: } Cuando $x$ y $\mu$ son vectores unitarios, es equivalente utilizar similitud de cosenos o norma Euclideana para asignar los datos. Razón:
+\begin{equation} \label{eq:euc2lin}
+\| x-\mu \|^2=\|x\|^2 + \| \mu \|^2-2x^T \mu = 2-2x^T \mu = 2(1-x^T \mu).
+\end{equation}
+Así pues, en una hiperesfera, maximizar la ecuación~\ref{eq:kmediasesf} es equivalente a minimizar la ecuación~\ref{eq:kmedias}. De esta manera, convertimos el problema de optimización cuadrático en uno lineal.
+
+
+
+\textbf{Observación:} El problema de optimización 
+
+\subsubsection{K-medias esféricas como densidad Langevin}
+El algoritmo de k-medias clásico regresa los estimadores de máxima verosimilitud para las medias de $k$ distribuciones normales con matrices identidad de covarianza utilizando el algoritmo EM. El algoritmo EM garantiza que dichos estimadores de máxima verosimilitud correspondan a un óptimo local de la función de verosimilitud.
+
+Sean $X_{1},X_{2},...,X_{n}$ variables aleatorias independientemente distribuidas de una densidad Langevin $p$-variada $\mathcal{L}_{p}(\mu ; \kappa)$ dada por
+
+\begin{equation}
+f(x ; \mu , \kappa)=\dfrac{1}{c_{p}(\kappa)} \exp(\kappa x^T\mu)
+\end{equation}
+
+ donde $\kappa$  es el parámetro de concentración y el coeficiente de normalización $c_{p}$ está dado por
+ 
+\begin{equation}
+ c_{p}(\kappa)=\frac{2\pi^{\frac{p}{2}}I_{\frac{p}{2}-1}(\kappa)}{\kappa^{\frac{p}{2}-1}} 
+\end{equation} 
+
+  donde $X_{i}$'s están sobre $\mathcal{S}^{p}$ y $I_{v}(\cdot)$ denota la función de Bessel modificada de primer tipo y orden $\nu$. La constante de integración $c_{p}(\kappa)$ se modifica de manera apropiada cuando las $X_{i}$'s se encuentran sobre $\mathcal{S}_{\perp 1}^p$. Asumamos que hay $k$ distribuciones Langevin $f_{h}$, $h=1,\dots, k $, de tal forma que cada punto proviene de exactamente una de éstas. Así, lo que se busca es estimar los parámetros  de dichas distribuciones de tal manera que la verosimilitud de los datos observados es maximizada. Sea $z_{ih}$  el índice que indica si $x_{i}$ fue generada por $f_{h}$ , dado que las $X_{i}$'s son independientes, la función de verosimilitud es
+
+ 
+\begin{equation} \label{obj:kesf_ver}
+L(\Theta;\mathcal{X})=\prod_{i=1}^{n} \sum_{h=1}^k z_{ih} f(x_{i};\mu_{h})
+\end{equation}
+%\nonumber \\ 
+%&=&\dfrac{1}{c_{p}^n(\kappa)}\exp \left( \kappa \sum_{i=1}^n \sum_{k=1}^K %x_{i}^T\mu_{k(x_{i})}\right) 
+ 
+ donde $\mu_{h}$ es la media de la $h$-ésima distribución Langevin, $\Theta = (\kappa ,\mu_{1}, \mu_{2},\dots, \mu_{k})$ y $\mathcal{X} = \lbrace x_1, x_2, \dots, x_n \rbrace$. Para un valor dado de los parámetros la distribución más verosímil de la cual proviene $x_{i}$ (en términos de la log-verosimilitud) está dada por
+ 
+\begin{eqnarray}\label{obj:kopt}
+ h^\ast&=& \underset{h}{\textrm{argmax}} \: \log f(x_{i} \; \mu_{h})\nonumber \\ 
+ 		  &=& \underset{h}{\textrm{argmax}} \: \kappa \,
+ x_{i}^T\mu_{h} - \log (c_p(\kappa) \nonumber \\
+ &=& \underset{h}{\textrm{argmax}} \: x_{i}^T\mu_{h}. 
+ \end{eqnarray}
+ 
+Utilizando ~\ref{obj:kopt} para asignar cada $x_{i}$ a una distribución, es posible reestimar las medias de las distribuciones correspondientes como sigue:
+\begin{eqnarray}\label{obj:mu_est}
+\mu_{h} = \cfrac{\sum_{x_i \in f_{h}} x_{i}}{\|\sum_{x_i \in f_{h}} x_{i}\|} & , & h = 1, \dots , k .
+\end{eqnarray}
+
+Repitiendo los pasos dados en las ecuaciones \ref{obj:kopt} y \ref{obj:mu_est} resulta en un esquema de ascenso gradiente cuya convergencia garantiza un mínimo local de la función de verosimilitud  \ref{obj:kesf_ver}. A este algoritmo se le conoce como $k$-medias esféricas pues las observaciones se encuentran sobre la superficie de la esfera unitaria. El desempeño de dicho algoritmo se puede evaluar a través de la log-verosimilitud normalizada dada por:
+
+\begin{equation}
+  \mathcal{J} = \frac{1}{n} \sum_{h=1}^{k} \sum_{x \in f_{h}} x^T\mu_h.
+\end{equation}.
+ 
+
+
+\subsection{Estadístico Gap para determinar K}
+Para poder aplicar el algoritmo de $k$-medias se debe seleccionar primero el número de grupos $K^\ast$ y un punto inicial. El número de grupos a escoger depende de la aplicación. Si se desea segmentar datos, $K$ está definida como parte del problema. Sin embargo, el análisis de conglomerados se utiliza con frecuencia para proporcionar un estadístico descriptivo para determinar si las observaciones cuentan con una agrupación natural. En este caso, el número de grupos $K^\ast$ es desconocido y es necesario estimarlo a través de los datos.
+
+Supongamos que se han agrupado las observaciones en $k$ grupos $C_{1},C_{2}, \dots, C_{K}$ donde $C_{h}$ denota el índice de las observaciones en el conglomerado $h$ y $n_{r}=|{C_{r}}|$. Sea
+
+\begin{equation}
+D_r = \sum_{i,i' \in C_{r}} d_{ii'}
+\end{equation}
+
+la suma de la distancia entre pares para todos los puntos en el grupo $r$, y sea
+
+\begin{equation}
+W_k = \sum_{r=1}^k \dfrac{1}{2n_{r}}D_{r}.
+\end{equation}
+
+La idea de este enfoque es estandarizar la gráfica de $\log{W_k}$ comparándola con su valor esperado bajo una distribución de referencia nula de los datos. La importancia de escoger una distribución nula apropiada es demostrada en \citet{gordon}. Así, la estimación del valor óptimo de grupos es el valor $K$ para el cual $\log{W_{k}}$ cae lo más lejano por debajo de su curva de referencia. Así, se define
+\begin{equation}
+\mbox{Gap}_{n}(k)=E^\ast_{n} \left[ \log(W_{k}) \right]  - \log(W_{k}), 
+\end{equation}
+
+donde $E^\ast_{n}$ denota el valor esperado bajo una muestra de tamaño $n$ de la distribución de referencia generada por Monte Carlo. El estimador $\hat{K}$  es aquel valor que maximiza $E^\ast_{n}$.  Se elige la distribución uniforme como distribución de referencia, distribuyendo los datos sobre un rectángulo que contiene los datos. \cite{tibshirani01} resume la implementación computacional del estadístico Gap como sigue:
+\begin{enumerate}
+\item Agrupar las observaciones  utilizando diferentes números de conglomerados $K=1,2,\dots,M$, donde M es un número fijo. Se calcula $W_{k}$.
+
+\item Generar $B$ conjuntos de datos simulados usando la distribución uniforme. Agrupar cada conjunto y calcular $W^{\ast}_{Kb},  b=1,2,...,B,  K=1,2,\dots,M$ y estimar la estadística Gap de la siguiente manera 
+\begin{equation}
+\mbox{Gap}=\dfrac{1}{B}\sum_{b=1}^B \log{W^{\ast}_{Kb}}-\log{W_{k}}.
+\end{equation}
+
+\item Sea $\bar{l}=\frac{1}{B} \sum_{b=1}^B \log{W^{\ast}_{Kb}}$, calcular la desviación estándar 
+\begin{equation}
+sd_{K}= \left[ \dfrac{1}{B}\sum_{b=1}^B \left(\log{W^{\ast}_{Kb}}-\bar{l}\right)^2 \right] ^{\frac{1}{2}}
+\end{equation}
+y definir 
+\begin{equation}
+s_{K}=sd_{K}\sqrt{1+\frac{1}{B}}.
+\end{equation}
+Finalmente, escoger $\hat{K}$ donde $\hat{K}$ is la menor $K$ tal que
+\begin{equation}\label{tibshiranicriteria}
+\mbox{Gap}(K) \geq \mbox{Gap}(K+1)-s_{K+1}.
+\end{equation}
+\end{enumerate}
+
+
+
