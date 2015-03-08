@@ -25,7 +25,7 @@ Un factor común de los objetivos del análisis de conglomerados es la noción d
 
 \textbf{Notación:}
 \begin{itemize}
-\item $X \in \Re^{n \times p}$ denota el conjunto de observaciones con n individuos y p variables. $x_{ij}$ es la medición del atributo $j$ para el individuo $i$ para $i=1,2,...,N$ y $j=1,2,...,p$.
+\item $X \in \Re^{n \times p}$ denota el conjunto de observaciones con n individuos y p variables. $x_{ij}$ es la medición del atributo $j$ para el individuo $i$ para $i=1,2,...,n$ y $j=1,2,...,p$.
 \item Denotamos al individuo $j$ como $x_{j}$ , donde $x_{j} = (x_{j1},x_{j2},...,x_{jp})^T \in \Re^p$ para $j=1,2,\dots,n$. Así $X=(x_{1},x_{2},...,x_{n})$.
 \item $C_{k}$ denota el $k$-ésimo grupo.
 \item $K$ denota el número total grupos.
@@ -73,7 +73,7 @@ Los algoritmos de conglomerados más comunes utilizan como entrada la matriz de 
 D(x_{i},x_{i'})= \sum_{j=1}^{p} d_{j}(x_{ij},x_{i'j})
 \end{equation}
 
-como la disimilitud entre los objetos $i$ y $i'$ \citep{hastie09}. La elección más común es la distancia cuadrática. Sin embargo, hay más elecciones posibles que pueden conducir a resultados muy diferentes. Para atributos no cuantitativos, la distancia cuadrática podría ser poco apropiada. Además, a veces es deseable ponderar los atributos de manera individual 
+como la disimilitud entre los objetos $i$ y $i'$ \citep{hastie09}. La elección más común es la distancia cuadrática. Sin embargo, hay más elecciones posibles que pueden conducir a resultados muy diferentes. Para atributos no cuantitativos, la distancia cuadrática podría ser poco apropiada. Además, a veces es deseable ponderar los atributos de manera individual.
 
 \section{K-medias}
 El algoritmo de K-medias es uno de los métodos iterativos de conglomerados de descenso más populares. Se utiliza para variables de tipo cuantitativo y la medida de similitud entre dos objetos utilizada es la distancia Euclideana al cuadrado:

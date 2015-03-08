@@ -1,0 +1,494 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"max-",
+				"max-height"
+			],
+			[
+				"DI",
+				"div"
+			],
+			[
+				"refre",
+				"refresh_button"
+			],
+			[
+				"tweets",
+				"tweets_list"
+			],
+			[
+				"succes",
+				"succesfully"
+			],
+			[
+				"data",
+				"dataset"
+			],
+			[
+				"spark",
+				"spark_path"
+			],
+			[
+				"salen",
+				"salen_total"
+			],
+			[
+				"keys",
+				"keys_list"
+			],
+			[
+				"padd",
+				"padding-left"
+			],
+			[
+				"seg",
+				"segmentator"
+			],
+			[
+				"or",
+				"organization_id"
+			],
+			[
+				"has",
+				"has_key"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 287.0,
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"latexing",
+				"LaTeXing: Lookup TeX Symbol"
+			],
+			[
+				"late",
+				"LaTeXing: Fill"
+			],
+			[
+				"latexto",
+				"LaTeXTools: Reconfigure and migrate settings"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/Carlos/Dropbox/tesis/latex/thesis.tex",
+		"/Users/Carlos/Dropbox/tesis2/latex/thesis.tex",
+		"/Users/Carlos/Dropbox/cv_7/moderncv.cls",
+		"/Users/Carlos/Dropbox/cv_7/moderncvstyleclassic.sty",
+		"/Users/Carlos/Dropbox/cv_7/Academic CV.tex",
+		"/Users/Carlos/Dropbox/cv_7/cv_7.tex",
+		"/Users/Carlos/Downloads/genericcoveronline.tex",
+		"/Users/Carlos/Dropbox/Tesis/Document/b.aux",
+		"/Users/Carlos/Dropbox/Tesis/Document/myplainnat.bst",
+		"/Users/Carlos/Dropbox/Tesis/Document/docitam.tex",
+		"/Users/Carlos/Dropbox/Tesis/Document/Output/rpichap3.aux",
+		"/Users/Carlos/Dropbox/Tesis/Document/Output/Tesis.bbl",
+		"/Users/Carlos/Dropbox/Tesis/Document/mathdefs.tex",
+		"/usr/local/texlive/2014/texmf-dist/tex/latex/biblatex/biblatex2.sty",
+		"/Users/Carlos/Library/Application Support/Sublime Text 3/Packages/User/LaTeXing.sublime-settings",
+		"/usr/local/texlive/2014/texmf-dist/tex/latex/caption/caption.sty",
+		"/Users/Carlos/Dropbox/Tesis/Document/huthesis.cls",
+		"/Users/Carlos/Dropbox/Tesis/Document/hut11.clo",
+		"/Users/Carlos/Dropbox/Tesis/Document/chitestap.tex",
+		"/Users/Carlos/Dropbox/Tesis/Document/Output/Tesis.toc",
+		"/Users/Carlos/Dropbox/Tesis/Escrito LATEX/momentosACE.tex",
+		"/Users/Carlos/Dropbox/Tesis/Document/ap1.tex",
+		"/Users/Carlos/Dropbox/Tesis/Document/natbib.sty",
+		"/Users/Carlos/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/Carlos/Library/Application Support/Sublime Text 3/Packages/LaTeXing/LaTeXing.sublime-settings",
+		"/Users/Carlos/Dropbox/Tesis/Document/thesis.sublime-project",
+		"/Users/Carlos/Dropbox/Tesis/Document/thesis.sublime-workspace",
+		"/Users/Carlos/Dropbox/Tesis/Document/b.tex",
+		"/Users/Carlos/Dropbox/Tesis/Document/thesis.tex",
+		"/Users/Carlos/Dropbox/Tesis/Document/bibs.bib",
+		"/Users/Carlos/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/Carlos/Dropbox/Tesis/Document/frontmatter.tex",
+		"/Users/Carlos/Dropbox/Tesis/Document/Makefile",
+		"/Users/Carlos/Dropbox/Tesis/Document/thesis.fdb_latexmk",
+		"/Users/Carlos/Library/Application Support/Sublime Text 3/Packages/LaTeXing/latexing/api/bibsonomy.map",
+		"/Users/Carlos/Library/Application Support/Sublime Text 3/Packages/LaTeXing/LaTeX.sublime-build",
+		"/Users/Carlos/Dropbox/Tesis/Document/labelsep",
+		"/Users/Carlos/Dropbox/Tesis/Document/thesist.pdf",
+		"/Users/Carlos/Dropbox/Tesis/Document/thesis.bbl",
+		"/Users/Carlos/Dropbox/Tesis/Document/biblio.bib",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/sinnia-tools-app/front/app/views/jobs/index.html.erb",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/sinnia-tools-app/front/app/views/layouts/_devise_navigation.html.erb",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/sinnia-tools-app/front/app/assets/javascripts/large_networks_jobs.js.coffee",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/sinnia-tools-app/front/app/helpers/jobs_helper.rb",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/sinnia-tools-app/front/test/controllers/jobs_controller_test.rb",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/sinnia-tools-app/front/config/mongoid.yml",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/sinnia-tools-app/front/app/views/layouts/application.html.erb",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/sinnia-tools-app/front/Gemfile",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/sinnia-tools-app/front/app/assets/stylesheets/application.css.scss",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/sinnia-tools-app/front/config/routes.rb",
+		"/Users/Carlos/Downloads/sinnia_logo_big-2.png",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/sinnia-tools-app/front/app/assets/stylesheets/home.css.scss",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/sinnia-tools-app/front/app/assets/stylesheets/large_networks_jobs.css.scss",
+		"/Users/Carlos/Documents/git/ztudio-arquitectura/assets/js/jquery.prettyPhoto.js",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/sanborns-offers-app/app/models/tweet.rb",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/sanborns-offers-app/app/assets/javascripts/application.js",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/sanborns-offers-app/config/routes.rb",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/sanborns-offers-app/app/assets/javascripts/pendings.js.coffee",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scripts/database/mig/sinnia_mig.py",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scripts/database/mig/import-sinnia.sh",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scripts/database/mig/lib/import.py",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/admin/app/controllers/organization_datasets_controller.rb",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/admin/app/controllers/organizations_controller.rb",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/admin/app/controllers/organization_topics_controller.rb",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/shared/app/models/topic.rb",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/admin/app/views/organization_pages/edit_dataset_pages.html.erb",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/admin/app/controllers/organization_segmentators_controller.rb",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/shared/app/models/user.rb",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/admin/app/models/organization_init.rb",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/shared/app/models/organization.rb",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/front/app/assets/javascripts/twttr_segments.js.coffee",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/front/app/assets/javascripts/twttr_monitors.js.coffee",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/front/app/assets/javascripts/navigation.js.coffee",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/front/app/controllers/twttr_segments_controller.rb",
+		"/Users/Carlos/Desktop/heart.gcx",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/shared/app/models/segmentator.rb",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/front/lib/content_helper.rb",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/front/config/routes.rb",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/front/app/assets/javascripts/twttr_drilldowns.js.coffee",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/front/app/assets/javascripts/components/top_content_component.js.coffee",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/front/app/helpers/twttr_drilldowns_helper.rb",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/front/app/assets/javascripts/components/activity_component.js.coffee",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/front/app/controllers/twttr_monitors_controller.rb",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/admin/app/views/organization_segmentators/index.html.erb",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/admin/app/views/organization_datasets/index.html.erb",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/admin/app/assets/javascripts/organization_datasets.js.coffee",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/admin/app/assets/javascripts/organization_segmentators.js.coffee",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/shared/app/models/segmentator_ref.rb",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/admin/app/controllers/trials_controller.rb",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/front/app/controllers/twttr_data_set_configs_controller.rb",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/front/app/assets/javascripts/twttr_data_set_configs.js.coffee",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/shared/app/models/data_set.rb",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/shared/app/models/page_conf.rb",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/front/app/controllers/registrations_controller.rb",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/front/db/seeds.rb",
+		"/Users/Carlos/Dropbox/dataton/Dashboard/index.html",
+		"/Users/Carlos/Dropbox/dataton/Dashboard/js/map_factor.js",
+		"/Users/Carlos/Dropbox/dataton/Dashboard/js/bar_chart_factor.js",
+		"/Users/Carlos/Dropbox/dataton/Dashboard/Data/sentimientos_hogar.json",
+		"/Users/Carlos/Dropbox/dataton/Dashboard/js/chord.js",
+		"/Users/Carlos/Dropbox/dataton/Dashboard/Data/entran_total.json",
+		"/Users/Carlos/Dropbox/dataton/Dashboard/Data/salidas_total.json",
+		"/Users/Carlos/Desktop/chord.svg",
+		"/Users/Carlos/Dropbox/dataton/Dashboard/js/bar_chart.js",
+		"/Users/Carlos/Dropbox/dataton/Dashboard/Map/choropleth-example.html",
+		"/Users/Carlos/Dropbox/dataton/dashboard/grid.html",
+		"/Users/Carlos/Dropbox/dataton/dashboard/js/demo/dashboard-demo.js",
+		"/Users/Carlos/Dropbox/dataton/dashboard/Map/js/resize.js",
+		"/Users/Carlos/Dropbox/dataton/dashboard/Map/choropleth-example.html",
+		"/Users/Carlos/Dropbox/dataton/dashboard/css/bootstrap.css",
+		"/Users/Carlos/Dropbox/dataton/dashboard/js/chord.js",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/backend/src/main/conf/backend-config-local.yaml",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/large-scale-data/src/main/resources/segmentator-type-meta.json",
+		"/Users/Carlos/Desktop/conf-by_topics.json",
+		"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/scc/admin/app/controllers/organization_pages_controller.rb",
+		"/Users/Carlos/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"",
+			"/Users/Carlos/Documents/git/ztudio-arquitectura/assets/js",
+			"",
+			"/Users/Carlos/Dropbox/Sinnia/git/Sinnia/sanborns-offers-app",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"langua",
+			"margin",
+			"subsec",
+			"K=",
+			"clusters",
+			"papa",
+			"donde",
+			"las",
+			"permutación ale",
+			"permutacion",
+			"marginac",
+			"indice",
+			"dedicat",
+			"resum",
+			"maket",
+			"newcomm",
+			"titleblo",
+			"newcomm",
+			"@place",
+			"electr",
+			"title",
+			"maitra",
+			"xu",
+			"caption",
+			"year",
+			"el supesto de",
+			"indica",
+			"estos m",
+			"positiva",
+			"\\#",
+			"\\re",
+			"re",
+			"math",
+			"In \"",
+			"\" In",
+			"gordo",
+			"gor",
+			"si se dea",
+			"abstract",
+			"subsub",
+			"density",
+			"10000",
+			"sin ree",
+			"alterna",
+			"ht",
+			"nom",
+			"nom_mu",
+			"imarg",
+			"coro",
+			"hastie",
+			"tibshira",
+			"valor-p",
+			"roj",
+			".8",
+			"math",
+			"mathb",
+			"format.boo",
+			"format.date",
+			"year",
+			"format.yea",
+			"book",
+			"thes",
+			"hat",
+			"format.names",
+			", ",
+			"year",
+			"vv",
+			"anseli",
+			"pages ",
+			"pages",
+			";",
+			"year",
+			"greater",
+			"write$",
+			".",
+			"\" .",
+			"dedica",
+			"Ackn",
+			"knowle",
+			"akno",
+			"enfoque",
+			"latexmk",
+			"mapmarg",
+			"mapmap",
+			"\\#",
+			"probab",
+			"jerarqu",
+			"correl",
+			"\\par",
+			"par",
+			"\\indent",
+			"indent",
+			"parinde",
+			"em",
+			"4em",
+			"paragr",
+			"para",
+			"parinde",
+			"textwidth",
+			"headwidth",
+			"renewc",
+			"fancy",
+			"nkow",
+			"ankn",
+			"ankow",
+			"akno",
+			"abstract",
+			"title",
+			"abstract",
+			"dbltrue",
+			"double",
+			"dbltrue",
+			"compatibility",
+			"size",
+			"abstract",
+			"borde",
+			"El Nayar",
+			"geary",
+			"kmediasesf",
+			"obj:kmediasesf",
+			"kmedias",
+			"figure",
+			"N_{tot}",
+			"\\#",
+			"pruebas de hip",
+			"pruebas de hipo",
+			"ref",
+			"estadística"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"frontera",
+			"Del Nayar",
+			"J_{tot}",
+			"\\right]",
+			"\\left[",
+			"Pendings",
+			"accounts",
+			"color_scale",
+			"col-sm-6"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "presentation.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 261.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
